@@ -1,0 +1,54 @@
+<div class="container">
+    <form class="popup" [formGroup]="addForm">
+        <div class="head-container">
+            <div class="input-date">
+                <label for="date">Date</label>
+                <input id="date" type="date" formControlName="date" />
+            </div>
+            <button class="cancel" (click)="onClickCancel()">Retour</button>
+        </div>
+        
+
+        <div class="input">
+            <label for="name">Titre</label>
+            <input id="name" type="text" formControlName="name" />
+        </div>
+
+
+        <div class="input">
+            <label for="state">Etat</label>
+            <select id="state" formControlName="state">
+                <option *ngFor="let state of getStates()" [ngStyle]="{'background-color': state.color}" [value]="state.value">
+                    {{ state.name }}
+                </option>
+            </select>
+        </div>
+
+        <div class="input">
+            <label for="type">Type</label>
+            <select id="type" formControlName="type">
+                <option *ngFor="let type of getTypes()" [value]="type.value">
+                    {{ type.name }}
+                </option>
+            </select>
+        </div>
+
+
+        <div class="input">
+            <label for="desc">Texte</label>
+            <textarea id="desc" formControlName="description"></textarea>
+        </div>
+        
+
+        <div *ngIf="!isEdit" class="input">
+            <app-file-upload formControlName="files"></app-file-upload>
+        </div>
+
+        <button class="submit" type="submit" (click)="onSubmit()" [disabled]="!addForm.valid">Enregistrer</button>
+
+        <div class="foot-container">
+            <button class="show-files" *ngIf="isEdit" (click)="onClickShowFiles()">Voir les fichers</button>
+            <button class="delete" *ngIf="isEdit" (click)="onClickDelete()">Supprimer</button>
+        </div>
+    </form>
+</div>

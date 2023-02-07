@@ -1,0 +1,16 @@
+.container {
+    width: 12vw;
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-radius: 1.5vw;
+    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.container:hover {
+    transform: scale(1.1);
+}

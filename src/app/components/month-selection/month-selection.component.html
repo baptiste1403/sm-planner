@@ -1,0 +1,6 @@
+<div class="container">
+    <app-year-selector></app-year-selector>
+    <div class="months-container">
+        <app-month-preview *ngFor="let month of months" [month]="month"></app-month-preview>
+    </div>
+</div>

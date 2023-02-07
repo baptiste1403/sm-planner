@@ -1,0 +1,15 @@
+.container {
+    background-color: blueviolet;
+    width: 100vw;
+    height: 100vh;
+}
+
+.months-container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(3, auto);
+    row-gap: 6vh;
+    column-gap: 8vw;
+    justify-content: center;
+    align-content: center;
+}

@@ -42,3 +42,6 @@ testem.log
 Thumbs.db
 
 /.vscode
+
+/electron/node_modules
+/electron/out

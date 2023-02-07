@@ -1,0 +1,6 @@
+<div class="container">
+    <h3 class="day-number">{{day}}</h3>
+    <div class="post-container" *ngIf="posts">
+        <span [ngStyle]="{'background-color' : getStateColor(post)}" class="post" (click)="onPostClick(post.name)" *ngFor="let post of posts">{{post.type}}</span>
+    </div>
+</div>

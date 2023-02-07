@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.previous-btn {
+    cursor: pointer;
+    padding-right: 1vw;
+    width: 4vh;
+    height: 4vh;
+}
+
+.next-btn {
+    cursor: pointer;
+    padding-left: 1vw;
+    width: 4vh;
+    height: 4vh;
+}

@@ -1,0 +1,94 @@
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: blueviolet;
+    width: 100vw;
+    height: 100vh;
+}
+
+.day-container {
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    grid-template-rows: repeat(6, auto);
+    row-gap: 1vh;
+    column-gap: 1vh;
+    width: 90vw;
+    height: 80vh;
+}
+
+.day-names {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: auto;
+    column-gap: 1vh;
+    width: 90vw;
+
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+
+    pointer-events: none;
+}
+
+.day-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.header {
+    background-color: rgb(0, 119, 255);
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .title {
+    text-align: center;
+    text-transform: uppercase;
+    align-self: center;
+    width: 50%;
+    margin: auto;
+}
+
+.header > button {
+    align-self: flex-start;
+}
+
+.day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.day:first-child {
+    grid-column: var(--value);
+}
+
+button {
+    border: none;
+    margin: 1vh;
+    padding: 1.5vh;
+    transition: transform 200ms;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.2);
+}
+
+.retour {
+    border-top-left-radius: 3vh;
+    border-bottom-left-radius: 3vh;
+    border-top-right-radius: 1.5vh;
+    border-bottom-right-radius: 1.5vh;
+    background-color: rgb(182, 38, 170);
+    color: white;
+}
+
+.popup {
+    border-radius: 2vh;
+    background-color: rgb(138, 31, 180);
+    color: white;
+}
