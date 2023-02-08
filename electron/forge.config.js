@@ -19,4 +19,17 @@ module.exports = {
       config: {},
     },
   ],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'baptiste1403',
+          name: 'sm-planner',
+        },
+        prerelease: false,
+        draft: true,
+      },
+    },
+  ],
 };

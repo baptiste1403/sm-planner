@@ -1,10 +1,12 @@
 const { app, BrowserWindow, shell, Menu } = require('electron');
+
+if (require('electron-squirrel-startup')) app.quit();
+
 const fs = require('fs');
 const express = require('express');
 const bodyParser = require('body-parser');
 const fileUpload = require('express-fileupload');
 const path = require("path");
-const sanitizer = require('./sanitizer');
 
 const serv = express();
 const port = 43434;
@@ -19,7 +21,7 @@ serv.put("/addpost", (req, res) => {
     asFiles = false;
   }
   fs.mkdirSync(path.join(app.getPath('userData'), `smplanner`, `${req.body.date}`, `${req.body.name}`), {recursive: true});
-  if(asFiles) {
+  if(asFiles && req.body.files) {
     for(file of JSON.parse(req.body.files)) {
       fs.copyFile(file.path, path.join(app.getPath('userData'), `smplanner`, `${req.body.date}`, `${req.body.name}`, `${file.name}`), (err) => {
         console.log(err);
@@ -67,8 +69,8 @@ const createWindow = () => {
     height: 800,
   })
 
-  win.loadFile('../dist/sm-planner/index.html');
-  //Menu.setApplicationMenu(null);
+  win.loadFile('./index.html');
+  Menu.setApplicationMenu(null);
 }
 
 app.whenReady().then(() => {

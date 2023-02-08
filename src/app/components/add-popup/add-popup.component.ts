@@ -20,8 +20,8 @@ export class AddPopupComponent {
     name: ['', [Validators.required]],
     state: ['', [Validators.required]],
     type: ['', [Validators.required]],
-    description: ['', [Validators.required]],
-    files: ['', [Validators.required, requiredFileType(['png', 'jpeg', 'mp4'])]]
+    description: ['', []],
+    files: ['', []]
   });
 
   constructor(private fb: FormBuilder, private api: ApiService,
